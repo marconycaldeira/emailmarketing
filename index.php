@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Email Marketing - CREA-JR</title>
+	<title>Email Marketing</title>
 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 	
@@ -258,14 +258,14 @@ function EnviaEmail($email, $arquivo, $mail){
 				}
 				$mail->isSMTP();
 				$mail->SMTPDebug  = 0;
-				$mail->Host       = "mx1.hostinger.com.br";
+				$mail->Host       = "host.smtp";
 				$mail->Port       = "587";
 				$mail->SMTPSecure = "tls";
 				$mail->SMTPAuth   = true;
-				$mail->Username   = "forum@crea-mgjrmoc.com.br"; //COLOQUE AQUI O ENDERECO DE EMAIL DO REMETENTE
-				$mail->Password   = "inline"; //COLOQUE A SENHA DO EMAIL DO REMETENTE
-				$mail->addReplyTo("forum@crea-mgjrmoc.com.br", "Erro ao enviar o certificado - " . $_POST['nome_evento']); //COLOQUE O ENDERECO DE EMAIL DO REMETENTE (ESSA FUNCAO ENVIA MSG DE ERRO QUANDO O DESTINATARIO É INVALIDO)
-				$mail->setFrom("forum@crea-mgjrmoc.com.br", "CREA-MG JR NUCLEO MONTES CLAROS"); //COLOQUE O ENDERECO DO REMETENTE
+				$mail->Username   = "email@email"; //COLOQUE AQUI O ENDERECO DE EMAIL DO REMETENTE
+				$mail->Password   = "senha"; //COLOQUE A SENHA DO EMAIL DO REMETENTE
+				$mail->addReplyTo("email@email", "Erro ao enviar o certificado - " . $_POST['nome_evento']); //COLOQUE O ENDERECO DE EMAIL DO REMETENTE (ESSA FUNCAO ENVIA MSG DE ERRO QUANDO O DESTINATARIO É INVALIDO)
+				$mail->setFrom("email@email", "NOME"); //COLOQUE O ENDERECO DO REMETENTE
 				$mail->addAddress($email, "Inscrito"); //COLOQUE O ENDERECO DE EMAIL DO DESTINATARIO
 				$mail->Subject  = "Certificado - " . $_POST['nome_evento']; //COLOQUE O ASSUNTO
 				$body           = $_POST['texto'];
