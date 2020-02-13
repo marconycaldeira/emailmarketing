@@ -16,16 +16,16 @@ if(!PHPMailer::validateAddress($to)) {
 }
 $mail->isSMTP();
 $mail->SMTPDebug  = 2;
-$mail->Host       = "mx1.hostinger.com.br";
-$mail->Port       = "587";
+$mail->Host       = "";
+$mail->Port       = "";
 $mail->SMTPSecure = "tls";
 $mail->SMTPAuth   = true;
-$mail->Username   = "forum@crea-mgjrmoc.com.br"; //COLOQUE AQUI O ENDERECO DE EMAIL DO REMETENTE
-$mail->Password   = "inline"; //COLOQUE A SENHA DO EMAIL DO REMETENTE
-$mail->addReplyTo("forum@crea-mgjrmoc.com.br", "Fórum das Engenharias"); //COLOQUE O ENDERECO DE EMAIL DO REMETENTE (ESSA FUNCAO ENVIA MSG DE ERRO QUANDO O DESTINATARIO É INVALIDO)
-$mail->setFrom("forum@crea-mgjrmoc.com.br", "Fórum das Engenharias"); //COLOQUE O ENDERECO DO REMETENTE
-$mail->addAddress("marconycaldeira@gmail.com", "Marcony"); //COLOQUE O ENDERECO DE EMAIL DO DESTINATARIO
-$mail->Subject  = "Fórum das Engenharias"; //COLOQUE O ASSUNTO
+$mail->Username   = ""; //COLOQUE AQUI O ENDERECO DE EMAIL DO REMETENTE
+$mail->Password   = ""; //COLOQUE A SENHA DO EMAIL DO REMETENTE
+$mail->addReplyTo(); //COLOQUE O ENDERECO DE EMAIL DO REMETENTE (ESSA FUNCAO ENVIA MSG DE ERRO QUANDO O DESTINATARIO É INVALIDO)
+$mail->setFrom(); //COLOQUE O ENDERECO DO REMETENTE
+$mail->addAddress); //COLOQUE O ENDERECO DE EMAIL DO DESTINATARIO
+$mail->Subject  = ""; //COLOQUE O ASSUNTO
 $body = "AQUI FICARA O CONTEUDO DA MENSAGEM";
 $mail->WordWrap = 78;
 $mail->msgHTML($body, dirname(__FILE__), true); 
